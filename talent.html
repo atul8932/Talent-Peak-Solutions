@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for a Job - Talent Peak Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+<script>
+    function redirectToPaymentPage() {
+        // Redirect to the payment page
+        window.location.href = "payment.html";
+    }
+</script>
+
+</head>
+
+
+<body>
+    <header>
+        <div>
+            <img src="logo-no-background.png" alt="Talent Peak Solutions Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="talent homepage.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="apply-form">
+            <h2>Fill to apply</h2>
+            <form action="submit_application.php" method="POST">
+                <label for="first-name">First Name<span>*</span>:</label>
+                <input type="text" id="first-name" name="first-name" placeholder="ex: Vishal" required><br><br>
+
+                <label for="last-name">Last Name<span>*</span>:</label>
+                <input type="text" id="last-name" name="last-name" placeholder="ex: Kumar" required><br><br>
+
+                <label for="middle-name">Middle Name:</label>
+                <input type="text" id="middle-name" name="middle-name"><br><br>
+
+                <label for="email">Email<span>*</span>:</label>
+                <input type="email" id="email" name="email" placeholder="ex: talentpeaksolutions@gmail.com" required><br><br>
+
+                <label for="phone">Phone Number<span>*</span>:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="ex: 123-456-7890" required><br><br>
+
+                <label for="dob">Date of Birth<span>*</span>:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+
+                <label for="gender">Gender<span>*</span>:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+
+                <label for="address1">Address Line 1<span>*</span>:</label>
+                <textarea id="address1" name="address1" rows="4" cols="50" required></textarea><br><br>
+
+                <label for="city">Current City<span>*</span>:</label>
+                <input type="text" id="city" name="city" placeholder="ex: Bangalore" required><br><br>
+
+                <label for="state">State/Province<span>*</span>:</label>
+                <input type="text" id="state" name="state" placeholder="ex: Tamil Nadu" required><br><br>
+
+                <label for="country">Country<span>*</span>:</label>
+                <input type="text" id="country" name="country" placeholder="ex: India" required><br><br>
+
+                <label for="qualification">Highest Full Time Qualification Held<span>*</span>:</label>
+                <input type="text" id="qualification" name="qualification" placeholder="ex: MTech, BTech, XII, etc." required><br><br>
+
+                <label for="institute">Institute<span>*</span>:</label>
+                <input type="text" id="institute" name="institute" placeholder="ex: University of XYZ" required><br><br>
+
+                <label for="year">Year of Passing<span>*</span>:</label>
+                <input type="number" id="year" name="year" placeholder="ex: 2022" required><br><br>
+
+                <label for="experience">Work Experience<span>*</span>:</label>
+                <input type="number" id="experience" name="experience" placeholder="0 FOR FRESHERS" required><br><br>
+
+                <label for="skills">Add Your Skills<span>*</span>:</label>
+                <input type="text" id="skills" name="skills" placeholder="ex: Java, HTML, CSS, etc." required><br><br>
+
+                <label for="resume">Resume<span>*</span>:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required><br><br>
+
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" >I agree to the Terms of Service</label>
+                </div>
+
+                <div class="form-actions">
+                    <input type="button" value="Cancel" onclick="window.location.href='talent homepage.html'">
+
+                    <input type="button" value="Submit Application" onclick="redirectToPaymentPage()">
+                    </form>
+
+
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Talent Peak Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html+>

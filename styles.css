@@ -1,0 +1,148 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    background-color: #3f0707;
+}
+
+header img {
+    max-width: 100%; /* Ensures the image does not exceed the width of its container */
+    height: auto; /* Allows the image to adjust its height proportionally to its width */
+    display: block; /* Ensures the image is treated as a block element */
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#apply-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color:gainsboro;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.id {
+    text-align: center;
+}
+
+.id2 {
+    text-align: center;
+    font-size: smaller;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form label {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+}
+
+form input,
+form select,
+form textarea {
+    width: calc(100% - 5px);
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid #031013;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+form input[type="checkbox"] {
+    width: auto;
+}
+
+form input[type="submit"],
+form input[type="button"] {
+    width: auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover,
+form input[type="button"]:hover {
+    background-color: #555;
+}
+
+form input,
+form select,
+form textarea,
+form input[type="submit"],
+form input[type="button"] {
+    
+}
+
+.form-actions {
+    width: 100%;
+    text-align: center;
+}
+
+.terms-checkbox {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+.submit-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-button input[type="submit"] {
+    background-color: #ccc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-button input[type="submit"]:hover {
+    background-color: #999;
+}

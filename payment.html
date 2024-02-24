@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Razorpay Button with QR Code</title>
+<style>
+  /* Custom styles for the button */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .payment-button1 {
+    padding: 1em 3em; /* Increased padding */
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-size: 18px; /* Increased font size */
+  }
+
+  .payment-button1:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  @keyframes glowing-button-85 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  .payment-button1:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Container to center the button -->
+<div class="container">
+  <!-- Button to initiate Razorpay checkout -->
+  <button class="payment-button1" onclick="openRazorpay()">Proceed To Pay</button>
+</div>
+
+<!-- Container for QR code -->
+<div id="qrcode"></div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script> <!-- Include QRCode.js library -->
+
+<script>
+  // Function to open Razorpay checkout
+  function openRazorpay() {
+    var options = {
+      "key": "rzp_test_rWcFe5KgP6xheO", // Replace with your actual Razorpay API key
+      "amount": 10000, // Example: 50000 corresponds to ₹500.00
+      "currency": "INR",
+      "name": "Talent Peak Solutions",
+      "description": "Purchase Description",
+      "image": "logo-no-background.png", // Replace with your company logo URL
+      "handler": function (response){
+        alert('Payment successful: ' + response.razorpay_payment_id);
+      }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+
+    // Generate and display QR code for payment link
+    var qr = new QRCode(document.getElementById("qrcode"), {
+      text: rzp.options.key,
+      width: 128,
+      height: 128,
+    });
+  }
+</script>
+
+</body>
+</html>
